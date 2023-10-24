@@ -91,7 +91,7 @@ public class TechJobs {
 
             // Print available choices
             for (int j = 0; j < choiceKeys.length; j++) {
-                System.out.println("" + j + " - " + choices.get(choiceKeys[j]));
+                System.out.println(j + " - " + choices.get(choiceKeys[j]));
             }
 
             if (in.hasNextInt()) {
@@ -119,23 +119,25 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
-        for (HashMap<String, String> jobs : someJobs) {
-            System.out.println("*****");
+        if(someJobs.isEmpty()) {
+            System.out.print("No Results");
 
-            for (Map.Entry<String, String> i : jobs.entrySet()) {
-                System.out.println(i.getKey()  + ": " + i.getValue());
+        } else {
 
+            for (HashMap<String, String> jobs : someJobs) {
+                System.out.println("\n*****");
+
+
+                for (Map.Entry<String, String> i : jobs.entrySet()) {
+                    System.out.println(i.getKey() + ": " + i.getValue());
+
+                }
+
+                System.out.println("*****");
 
             }
-            System.out.println("*****");
-            System.out.println("\n");
         }
-        //HashMap<String, String> printJobs = new HashMap<>();
-        //System.out.println("printJobs is not implemented yet");
-        //System.out.printIln(*****); beginning
-        //System.out.printIln(*****); end
-        //System.out.printIln(\n); spacing???
-        //if statement System.out.println(Job not found); if no results
+
 
 
 
